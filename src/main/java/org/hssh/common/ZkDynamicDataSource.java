@@ -27,7 +27,7 @@ public class ZkDynamicDataSource extends AbstractRoutingDataSource{
     private ZkdbcpConfigProperties properties;
 
     public void init(ZkdbcpConfigProperties properties) throws SQLException {
-        ZkClient zk = new ZkClient(System.getenv("spring.cloud.zookeeper.connect-string"));
+        ZkClient zk = new ZkClient(System.getenv("ZK_HOST"));
         this.init(zk, properties);
     }
 
