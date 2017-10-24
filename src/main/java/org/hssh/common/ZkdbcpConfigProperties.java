@@ -10,10 +10,26 @@ public class ZkdbcpConfigProperties {
 
     public static final String ZKDB_PREFIX = "zkdb";
 
+
+    /**
+     * db url配置
+     */
+    public String confName;
+
     /**
      * 业务名称
      */
     public String bizName;
+
+    public String getConfName()
+    {
+        return confName;
+    }
+
+    public void setConfName(String confName)
+    {
+        this.confName = confName;
+    }
 
     public String getBizName() {
         return bizName;

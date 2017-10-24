@@ -36,7 +36,8 @@ public class ZkDynamicDataSource extends AbstractRoutingDataSource{
         Preconditions.checkArgument(zk!=null && properties!=null, "zk is not init");
         Map<Object, Object> dataSourceMap = Maps.newHashMap();
         this.properties = properties;
-        PropertiesConfiguration dbConfig = ZkUtils.byteToProper(zk.readData("/config/zkdb/db.conf"));
+
+        PropertiesConfiguration dbConfig = ZkUtils.byteToProper(zk.readData("/config/zkdb/" + ZkdbcpConfig.getConfName(this.properties)));
         PropertiesConfiguration bizConfig = ZkUtils.byteToProper(zk.readData("/config/zkdb/" + properties.getBizName()));
         for(String s : DataSourceName.allName) {
             Preconditions.checkNotNull(dbConfig, "load zk dbConfig error");
