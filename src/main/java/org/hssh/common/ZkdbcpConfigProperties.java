@@ -14,12 +14,18 @@ public class ZkdbcpConfigProperties {
     /**
      * db url配置
      */
+    @Deprecated
     public String confName;
 
     /**
      * 业务名称
      */
     public String bizName;
+
+    /**
+     * 项目名称
+     */
+    public String projectName;
 
     public String getConfName()
     {
@@ -37,5 +43,13 @@ public class ZkdbcpConfigProperties {
 
     public void setBizName(String bizName) {
         this.bizName = bizName;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
 }
